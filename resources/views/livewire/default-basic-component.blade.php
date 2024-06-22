@@ -178,7 +178,7 @@
                                     <div class="col-lg-6 col-12">
                                         <label for="image_upload">Previous Upload<span class="text-danger"></span></label>
                                         <br>
-                                        <a href="{{ asset($image_upload) }}" target="_blank"><img src="{{ asset($list->image_upload) }}" alt="Image" class="img-fluid img-thumbnail mt-2" style="width: 200px;"></a>
+                                        <a href="{{ asset($image_upload) }}" target="_blank"><img src="{{ asset($image_upload) }}" alt="Image" class="img-fluid img-thumbnail mt-2" style="width: 200px;"></a>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                                     <div class="col-lg-2 col-12">
                                         <label for="image_upload">Previous Upload<span class="text-danger"></span></label>
                                         <br>
-                                        <a href="{{ asset($list->image_upload) }}" target="_blank"><img src="{{ asset($list->image_upload) }}" alt="Image" class="img-fluid img-thumbnail mt-2" style="width: 200px;"></a>
+                                        <a href="{{ asset($image_upload) }}" target="_blank"><img src="{{ asset($image_upload) }}" alt="Image" class="img-fluid img-thumbnail mt-2" style="width: 200px;"></a>
                                     </div>
                                     <div class="col-lg-10 col-12">
                                         <div class="form-group">

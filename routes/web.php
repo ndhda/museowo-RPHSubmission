@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DefaultBasicController;
+use App\Http\Controllers\SubjectController;
 use App\Livewire\DefaultBasicComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,9 +40,19 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //Admin routes
-Route::prefix('admin')->as('admin')->middleware(['auth', 'role:admin'])->group(function () {
+Route::prefix('admin')->as('admin.')->middleware(['auth', 'role:admin'])->group(function () {
+    Route::prefix('subject')->as('subject.')->controller(SubjectController::class)->group(function () {
+        Route::get('index', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('show/{uuid}', 'show')->name('show');
+        Route::get('edit/{uuid}', 'edit')->name('edit');
+        Route::put('update/{uuid}', 'update')->name('update');
+        Route::delete('destroy/{uuid}', 'destroy')->name('destroy');
+    });
 });
 
 //User routes
-Route::prefix('user')->as('user')->middleware(['auth', 'role:user'])->group(function () {
+Route::prefix('teacher')->as('teacher.')->middleware(['auth', 'role:teacher'])->group(function () {
+
 });

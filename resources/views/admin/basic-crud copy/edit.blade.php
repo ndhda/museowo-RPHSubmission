@@ -15,7 +15,6 @@
                 <form action="{{ route('basic-crud.update', $list->id) }}" method="POST" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
-                    <x-alert />
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group mb-4">

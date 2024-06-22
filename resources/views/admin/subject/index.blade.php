@@ -7,43 +7,30 @@
                 <div class="d-flex justify-content-between">
                     <h4 class="card-title">Index</h4>
                     <div>
-                        <a href="{{ route('basic-crud.create') }}" class="btn btn-outline-primary"><i data-feather="plus"></i> Create</a>
+                        <a href="{{ route('admin.subject.create') }}" class="btn btn-outline-primary"><i data-feather="plus"></i> Create</a>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <x-alert />
                 <table id="zero-config" class="dt-table-hover table" style="width:100%">
                     <thead>
                         <tr class="text-center">
-                            <th>Short Text</th>
-                            <th>Long Text</th>
-                            <th>File Upload</th>
-                            <th>Image Upload</th>
-                            <th>Color</th>
-                            <th>Status</th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Description</th>
                             <th class="no-content">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($lists as $list)
                             <tr class="text-center">
-                                <td>{{ $list->short_text }}</td>
-                                <td>{{ $list->long_text }}</td>
-                                <td><a href="{{ asset($list->file_upload) }}" target="_blank"><span class="badge badge-primary">View/Download</span></a></td>
-                                <td><a href="{{ asset($list->image_upload) }}" target="_blank"><img src="{{ asset($list->image_upload) }}" alt="Image" class="img-fluid img-thumbnail" style="width: 50px;"></a></td>
-                                <td><div style="width: 50px; height: 50px; background-color: {{ $list->color }};"></div></td>
+                                <td>{{ $list->name }}</td>
+                                <td>{{ $list->code }}</td>
+                                <td>{{ $list->description }}</td>
                                 <td>
-                                    @if ($list->status == 'active')
-                                        <span class="badge badge-success">{{ ucfirst($list->status) }}</span>
-                                    @else
-                                        <span class="badge badge-danger">{{ ucfirst($list->status) }}</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    <a href="{{ route('basic-crud.show', $list->id) }}" class="btn btn-outline-info btn-sm"><i data-feather="eye"></i></a>
-                                    <a href="{{ route('basic-crud.edit', $list->id) }}" class="btn btn-outline-warning btn-sm"><i data-feather="edit"></i></a>
-                                    <form action="{{ route('basic-crud.destroy', $list->id) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('admin.subject.show', $list->id) }}" class="btn btn-outline-info btn-sm"><i data-feather="eye"></i></a>
+                                    <a href="{{ route('admin.subject.edit', $list->id) }}" class="btn btn-outline-warning btn-sm"><i data-feather="edit"></i></a>
+                                    <form action="{{ route('admin.subject.destroy', $list->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
