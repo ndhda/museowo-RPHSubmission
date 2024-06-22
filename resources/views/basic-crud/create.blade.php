@@ -14,6 +14,7 @@
             <div class="card-body">
                 <form action="{{ route('basic-crud.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <x-alert />
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group mb-4">

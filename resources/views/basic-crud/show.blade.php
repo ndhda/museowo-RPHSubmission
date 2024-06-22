@@ -12,6 +12,7 @@
                 </div>
             </div>
             <div class="card-body">
+                <x-alert />
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group mb-4">

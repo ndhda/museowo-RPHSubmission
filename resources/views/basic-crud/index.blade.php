@@ -12,6 +12,7 @@
                 </div>
             </div>
             <div class="card-body">
+                <x-alert />
                 <table id="zero-config" class="dt-table-hover table" style="width:100%">
                     <thead>
                         <tr class="text-center">
